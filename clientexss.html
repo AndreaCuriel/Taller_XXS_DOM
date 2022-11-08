@@ -1,0 +1,32 @@
+<!-- Encabezado HTML-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS</title>
+</head>
+<!-- Inicio de la Maquetación -->
+<body>
+    <div>
+        <h1>Cliente - Vulnerabilidades de la Programación - XSS</h1>
+        <input type="text" name="mensaje" id="texto">
+        <button id="boton">Imprimir</button>
+        <div id="salida"></div>
+    </div>
+    
+</body>
+<!--Javascript-->
+<script>
+    let boton = (document.getElementById("boton").onclick = imprimir);
+    let texto = document.getElementById("texto");
+    let salida = document.getElementById("salida");
+
+    function imprimir(){
+        let entrada= texto.value; 
+        salida.innerHTML=entrada;
+    }
+    
+</script>
+</html>
